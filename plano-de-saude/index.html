@@ -27,15 +27,20 @@
         <button>Cadastrar</button>
     </header>
     <main>
-        <h2>Seja bem vindo ao Maciel <span>Med</span> </h2>
-        <section>
+        <h2>Seja bem vindo ao Maciel <span>Med</span>.</h2>
+        <section class="dados">
             <input type="text" name="nome" id="nome" placeholder="Nome do cliente">
-            <input type="text" name="idade" id="idade" placeholder="Idade do cliente">
+            <input type="number" name="idade" id="idade" placeholder="Idade do cliente">
 
-            <input type="submit" value="calcular plano de saude">
+            <input type="submit" onclick="calcularPlano()" value="calcular plano de saude" class="botao-calcular">
+
+        </section>
+        <section id="resposta">
 
         </section>
     </main>
-    
+
+
+    <script src="app.js"></script>
 </body>
 </html>
