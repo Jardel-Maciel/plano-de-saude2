@@ -9,14 +9,17 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <!--google fonts-->
-    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=menu" />
     <title>Maciel Med</title>
 
 </head>
 <body>
     <header>
         <h1>Maciel <span>Med</span></h1>
-        <nav class="navegacao">
+        <span id="menu"  class="material-symbols-outlined" onclick="menu()">
+            menu
+            </span>
+        <nav class="navegacao" id="navegacao">
             <ul>
                 <li><a href="#">Plano</a></li>
                 <li><a href="#">Plano</a></li>
@@ -26,6 +29,7 @@
         </nav>
         <button>Login</button>
         <button>Cadastrar</button>
+        
     </header>
     <main>
         <h2>Seja bem vindo ao Maciel <span>Med</span>.</h2>
