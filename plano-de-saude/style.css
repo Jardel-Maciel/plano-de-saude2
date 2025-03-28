@@ -94,10 +94,22 @@ h2 > span{
     font-weight: 600;
 }
 
-@media (max-width: 990px) {
+@media screen and (max-width: 990px) {
     .navegacao{
         display: none;
     }
+    button{
+        display: none;
+    }
+    .dados{
+        display: inline-block;
+        width: 100px;
+        margin: 20px 0px 0px 20%;
+        
+        
+    }
+    
+    
     
 }
 
