@@ -6,6 +6,7 @@ function calcular(){
     var valor = document.getElementById('valorBase');
     var valorBase = Number(valor.value);
     var res = document.getElementById('resposta');
+    
     if(idadeDoCliente => 0 && idadeDoCliente < 19){
         var valorMensal = valorBase * 100/100;
         res.innerHTML = ("O valor do plano é de R$" + valorMensal + " por mês") 
@@ -30,4 +31,10 @@ function calcular(){
         var valorMensal = valorBase * 600/100;
         res.innerHTML = ("O valor do plano é de R$" + valorMensal + " por mês")
     }
+    if(idadeDoCliente == " "){
+        alert("Todos os campos devem ser preenchidos")
+    }
+    
+    
+      
 }
