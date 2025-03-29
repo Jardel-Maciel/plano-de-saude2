@@ -38,12 +38,12 @@ function calcular(){
     
       
 }
-function menu(){
-    var navegacao = document.getElementById("navegacao")
-    if(navegacao.style.display == "block"){
-        navegacao.style.display = "none"
 
+function clickMenu(){
+    var menu = document.getElementById("navegacao")
+    if(menu.style.display == "block"){
+        menu.style.display = "none"
     }else{
-        navegacao.style.display = "block"
+        menu.style.display = "block"
     }
 }
