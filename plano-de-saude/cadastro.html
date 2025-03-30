@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Cadastre-se</title>
+</head>
+<body>
+    <header>
+        <header>
+            <h1>Maciel <span>Med</span></h1>
+            <span class="material-symbols-outlined" id="menu" onclick="clickMenu()">
+                menu
+                </span>
+            
+                
+            <nav class="navegacao" id="navegacao">
+                <ul>
+                    <li><a href="#">Dentista</a></li>
+                    <li><a href="#">Psicologia</a></li>
+                    <li><a href="#">Pediatria</a></li>
+                    <li><a href="#">Ortopedista</a></li>
+                </ul>
+            </nav>
+            <button><a href="#" id="btlog">Login</a></button>                       
+        </header>
+    </header>
+    <main>
+        <h2>Cadastre-se no Maciel <span>Med</span>.</h2>
+        <section class="dados" id="dados">
+          
+            <input type="email" name="email" id="email" placeholder="Digite seu E-mail" required>
+            <input type="email" name="confirme-email" id="confirme-email" placeholder="Confirme seu E-mail" required>
+            <input type="text" name="nome" id="nome" placeholder="Digite seu name" required>
+            <input type="date" name="dataDeNascimento" id="dataDeNascimento" required>
+            <input type="password" name="senha" id="senha" placeholder="Digite sua senha">
+            <input type="password" name="senha" id="senha" placeholder="Confirme sua senha">
+
+            <input type="submit" id="Cadastrar" onclick="cadastrar()" value="Cadastrar" class="botao-calcular">
+
+        </section>
+      
+    </main>
+
+    <script src="app.js"></script>
+    
+</body>
+</html>

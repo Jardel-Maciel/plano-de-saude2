@@ -47,3 +47,9 @@ function clickMenu(){
         menu.style.display = "block"
     }
 }
+
+function cadastrar(){
+    var cadastrar = document.getElementById("cadastrar");
+    alert("Cadastro efetuado com sucesso");
+    
+}
