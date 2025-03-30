@@ -50,6 +50,5 @@ function clickMenu(){
 
 function cadastrar(){
     var cadastrar = document.getElementById("cadastrar");
-    alert("Cadastro efetuado com sucesso");
-    
+    alert("Cadastro efetuado com sucesso");    
 }
