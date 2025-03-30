@@ -23,6 +23,14 @@ button{
     color: white;
     font-weight: 800;
     box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.253);
+    transition: 0.5s;
+}
+#btlog{
+    color: white;
+    font-size: 20px;
+}
+button:hover{
+    cursor: pointer;
 }
 header ul{
     display: flex;
@@ -89,6 +97,7 @@ h2 > span{
     font-weight: 900;
     color: white;
     box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.253);
+    transition: 0.5s;
 }
 .botao-calcular:hover{
     cursor: pointer;
