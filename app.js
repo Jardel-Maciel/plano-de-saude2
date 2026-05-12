@@ -1,49 +1,59 @@
+// Maciel Med — calculadora de plano de saúde
+(function () {
+  const form = document.getElementById('form');
+  const valorBaseEl = document.getElementById('valorBase');
+  const idadeEl = document.getElementById('idade');
+  const erroEl = document.getElementById('erro');
+  const empty = document.getElementById('empty');
+  const resultado = document.getElementById('resultado');
+  const valorMensalEl = document.getElementById('valorMensal');
+  const faixaEl = document.getElementById('faixa');
 
+  function calcular(idade, base) {
+    if (idade >= 0 && idade < 19)  return { mult: 1.0,  faixa: '0–18 anos' };
+    if (idade >= 19 && idade < 29) return { mult: 1.5,  faixa: '19–28 anos' };
+    if (idade >= 29 && idade < 39) return { mult: 2.25, faixa: '29–38 anos' };
+    if (idade >= 39 && idade < 49) return { mult: 2.4,  faixa: '39–48 anos' };
+    if (idade >= 49 && idade < 60) return { mult: 3.5,  faixa: '49–59 anos' };
+    return { mult: 6.0, faixa: '60+ anos' };
+  }
 
-function calcular(){
-    var idade = document.getElementById('idade');
-    var idadeDoCliente = Number(idade.value);
-    var valor = document.getElementById('valorBase');
-    var valorBase = Number(valor.value);
-    var res = document.getElementById('resposta');
-    
-    if(idadeDoCliente => 0 && idadeDoCliente < 19){
-        var valorMensal = valorBase * 100/100;
-        res.innerHTML = ("O valor do plano é de R$" + valorMensal + " por mês") 
-    }
-    if(idadeDoCliente >= 19 && idadeDoCliente < 29){
-        var valorMensal = valorBase * 150/100;
-        res.innerHTML = ("O valor do plano é de R$" + valorMensal + " por mês")
-    }
-    if(idadeDoCliente >= 29 && idadeDoCliente < 39){
-        var valorMensal = valorBase * 225/100;
-        res.innerHTML = ("O valor do plano é de R$" + valorMensal + " por mês")
-    }
-    if(idadeDoCliente >= 39 && idadeDoCliente < 49){
-        var valorMensal = valorBase * 240/100;
-        res.innerHTML = ("O valor do plano é de R$" + valorMensal + " por mês")
-    }
-    if(idadeDoCliente >= 49 && idadeDoCliente < 59){
-        var valorMensal = valorBase * 350/100;
-        res.innerHTML = ("O valor do plano é de R$" + valorMensal + " por mês")
-    }
-    if(idadeDoCliente > 60){
-        var valorMensal = valorBase * 600/100;
-        res.innerHTML = ("O valor do plano é de R$" + valorMensal + " por mês")
-    }
-    if(idadeDoCliente == " "){
-        alert("Todos os campos devem ser preenchidos")
-    }
-    
-    
-      
-}
+  function showError(msg) {
+    erroEl.textContent = msg;
+    erroEl.hidden = false;
+  }
 
-function clickMenu(){
-    var menu = document.getElementById("navegacao")
-    if(menu.style.display == "block"){
-        menu.style.display = "none"
-    }else{
-        menu.style.display = "block"
+  function clearError() {
+    erroEl.hidden = true;
+    erroEl.textContent = '';
+  }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    const idade = Number(idadeEl.value);
+    const base = Number(valorBaseEl.value);
+
+    if (!idadeEl.value || !valorBaseEl.value) {
+      showError('Preencha todos os campos para simular.');
+      return;
     }
-}
+    if (idade < 0 || base < 0) {
+      showError('Os valores devem ser positivos.');
+      return;
+    }
+    clearError();
+
+    const { mult, faixa } = calcular(idade, base);
+    const valorMensal = base * mult;
+
+    valorMensalEl.textContent =
+      'R$ ' + valorMensal.toLocaleString('pt-BR', {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2,
+      });
+    faixaEl.textContent = 'Faixa: ' + faixa;
+
+    empty.hidden = true;
+    resultado.hidden = false;
+  });
+})();
